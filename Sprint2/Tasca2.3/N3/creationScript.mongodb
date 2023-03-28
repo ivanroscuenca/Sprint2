@@ -1,0 +1,18 @@
+use('spotify');
+db.createCollection( 'user', {validator: {$jsonSchema: {bsonType: 'object',title:'user',required: [         'user_type',          'email',          'name',          'date_of_birth',          'gender',          'country',          'zip'],properties: {user_type: {enum: 'PREMIUM', 'FREE'},email: {bsonType: 'string'},name: {bsonType: 'string'},date_of_birth: {bsonType: 'date'},gender: {enum: 'MALE','FEMALE'},country: {bsonType: 'string'},zip: {bsonType: 'int'},premium: {bsonType: 'object',
+title:'object',required: [         'date_subscription',          'date_renoval',          'payment'],properties: {date_subscription: {bsonType: 'date'},date_renoval: {bsonType: 'date'},payment: {enum: 'CARD','PAYPAL'},payment_details: {bsonType: 'object',
+title:'object',properties: {number_card: {bsonType: 'string'},expiration_date: {bsonType: 'date'},security_code: {bsonType: 'int'},paypal_name: {bsonType: 'string'},Payment_registers: {bsonType: 'array'}}}}},artists_followed: {bsonType: 'array',items: {bsonType: 'objectId'}},favourite_albums: {bsonType: 'array',items: {bsonType: 'objectId'}},favourite_songs: {bsonType: 'array',items: {bsonType: 'objectId'}}}         }      }});  
+ db.user.createIndex(
+{
+  "_id": 1
+});
+
+
+db.createCollection( 'Playlists', {validator: {$jsonSchema: {bsonType: 'object',title:'Playlists',required: [         'title',          'number_songs',          'date_creation',          'playlist_removed',          'user'],properties: {title: {bsonType: 'string'},number_songs: {bsonType: 'int'},date_creation: {bsonType: 'date'},playlist_removed_details: {bsonType: 'object',
+title:'object',properties: {date_removed: {bsonType: 'date'}}},playlist_removed: {bsonType: 'bool'},status: {enum: 'ACTIVE','REMOVED'},user: {bsonType: 'objectId'},shared_list: {bsonType: 'object',
+title:'object',properties: {shared_user: {bsonType: 'objectId'},date_shared: {bsonType: 'date'}}},songs: {bsonType: 'array',items: {bsonType: 'objectId'}}}         }      }});  
+
+
+db.createCollection( 'album', {validator: {$jsonSchema: {bsonType: 'object',title:'album',required: [         'songs',          'artist',          'title',          'year',          'user'],properties: {songs: {bsonType: 'object',
+title:'object',required: [         'title',          'length',          'number_repr'],properties: {title: {bsonType: 'string'},length: {bsonType: 'double'},number_repr: {bsonType: 'int'}}},artist: {bsonType: 'object',
+title:'object',required: [         'name'],properties: {name: {bsonType: 'string'},image: {bsonType: 'binData'},artist_followed: {bsonType: 'array'}}},title: {bsonType: 'string'},year: {bsonType: 'int'},image: {bsonType: 'binData'},user: {bsonType: 'objectId'}}         }      }});

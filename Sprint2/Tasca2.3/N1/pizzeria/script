@@ -1,0 +1,15 @@
+
+db.createCollection( 'client', {validator: {$jsonSchema: {bsonType: 'object',title:'client',required: [         'name',          'surname',          'phone'],properties: {name: {bsonType: 'string'},surname: {bsonType: 'string'},phone: {bsonType: 'int'},address: {bsonType: 'object',
+title:'object',required: [         'city',          'state'],properties: {city: {bsonType: 'string'},state: {bsonType: 'string'},zip: {bsonType: 'string'},street: {bsonType: 'string'}}}}         }      }});  
+ db.client.createIndex(
+{
+  "_id": 1
+})
+
+
+db.createCollection( 'products', {validator: {$jsonSchema: {bsonType: 'object',title:'products',required: [         'pizzaCategories'],properties: {name: {bsonType: 'string'},description: {bsonType: 'string'},image: {bsonType: 'binData'},price: {bsonType: 'double'},type: {enum: 'BURGER', 'DRINK','PIZZA'},pizzaCategories: {bsonType: 'objectId'}}         }      }});  
+db.createCollection( 'pizzaCategories', {validator: {$jsonSchema: {bsonType: 'object',title:'pizzaCategories',properties: {name: {bsonType: 'string'}}         }      }});  
+db.createCollection( 'orders', {validator: {$jsonSchema: {bsonType: 'object',title:'orders',required: [         'shop',          'client',          'products',          'Employees',          'delivery'],properties: {shop: {bsonType: 'objectId'},client: {bsonType: 'objectId'},products: {bsonType: 'objectId'},Employees: {bsonType: 'objectId'},delivery: {bsonType: 'bool'},delivery_date: {bsonType: 'timestamp'}}         }      }});  
+db.createCollection( 'shop', {validator: {$jsonSchema: {bsonType: 'object',title:'shop',properties: {address: {bsonType: 'object',
+title:'object',required: [         'street',          'city'],properties: {street: {bsonType: 'string'},city: {bsonType: 'string'},state: {bsonType: 'string'},zip: {bsonType: 'string'}}}}         }      }});  
+db.createCollection( 'Employees', {validator: {$jsonSchema: {bsonType: 'object',title:'Employees',required: [         'name',          'surname',          'phone',          'job',          'shop'],properties: {name: {bsonType: 'string'},surname: {bsonType: 'string'},NIF: {bsonType: 'string'},phone: {bsonType: 'int'},job: {enum: 'COOKER', 'DELIVERY'},shop: {bsonType: 'objectId'}}         }      }});  

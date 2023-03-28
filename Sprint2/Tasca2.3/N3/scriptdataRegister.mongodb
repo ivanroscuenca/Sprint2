@@ -1,0 +1,162 @@
+//users
+use('spotify');
+db.user.insertMany([  {    "user_type": "PREMIUM",    "email": "john.doe@example.com",    "name": "John Doe",    "date_of_birth": ISODate("1985-01-01"),    "gender": "MALE",    "country": "USA",    "zip": 12345,    "premium": {      "date_subscription": ISODate("2022-01-01"),      "date_renoval": ISODate("2023-01-01"),      "payment": "CARD",      "payment_details": {        "number_card": "1234-5678-9012-3456",        "expiration_date": ISODate("2024-01-01"),        "security_code": 123,        "Payment_registers": []
+      }
+    },
+    "artists_followed": [
+      
+    ],
+    "favourite_albums": [
+      
+    ],
+    "favourite_songs": [
+      
+    ]
+  },
+  {
+    "user_type": "FREE",
+    "email": "jane.doe@example.com",
+    "name": "Jane Doe",
+    "date_of_birth": ISODate("1990-01-01"),
+    "gender": "FEMALE",
+    "country": "Canada",
+    "zip": 67890,
+    "artists_followed": [
+      
+    ],
+    "favourite_albums": [
+     
+    ],
+    "favourite_songs": [
+     
+    ]
+  },
+]);
+
+//playlists
+use('spotify');
+// Record 1
+db.Playlists.insertOne({
+  title: "My Favorite Songs",
+  number_songs: 10,
+  date_creation: new Date("2022-03-28"),
+  playlist_removed: false,
+  user: ObjectId("6422aaf78eb5a43d218a26c9"),
+  songs: [
+
+  ]
+});
+
+// Record 2
+db.Playlists.insertOne({
+  title: "Relaxing Music",
+  number_songs: 8,
+  date_creation: new Date("2022-03-27"),
+  playlist_removed: true,
+  playlist_removed_details: {
+    date_removed: new Date("2022-03-28")
+  },
+  status: "REMOVED",
+  user: ObjectId("6422aaf78eb5a43d218a26c9"),
+  songs: [
+
+  ]
+});
+
+// Record 3
+db.Playlists.insertOne({
+  title: "Party Mix",
+  number_songs: 15,
+  date_creation: new Date("2022-03-26"),
+  playlist_removed: false,
+  user: ObjectId("61f3f97b3ee3b25c8d883e94"),
+  shared_list: {
+    shared_user: ObjectId("6422aaf78eb5a43d218a26ca"),
+    date_shared: new Date("2022-03-28")
+  },
+  songs: [
+
+  ]
+});
+
+// Record 4
+db.Playlists.insertOne({
+  title: "Road Trip",
+  number_songs: 12,
+  date_creation: new Date("2022-03-25"),
+  playlist_removed: false,
+  user: ObjectId("6422aaf78eb5a43d218a26ca"),
+  songs: [
+
+  ]
+});
+
+
+//albums
+
+use('spotify');
+db.album.insertMany([  {    
+  songs: {      
+    title: "Song 1",      
+    length: 3.45,     
+    number_repr: 1    },    
+    artist: {
+      name: "Artist 1",      
+      image: null,      
+      artist_followed: []
+},
+    title: "Album 1",
+    year: 2020,
+    image: null,
+    user: ObjectId("6422aaf78eb5a43d218a26c9")
+  },
+  {
+    songs: {
+      title: "Song 2",
+      length: 4.02,
+      number_repr: 2
+    },
+    artist: {
+      name: "Artist 2",
+      image: null,
+      artist_followed: []
+    },
+    title: "Album 2",
+    year: 2021,
+    image: null,
+    user: ObjectId("6422aaf78eb5a43d218a26c9")
+  },
+  {
+    songs: {
+      title: "Song 3",
+      length: 3.12,
+      number_repr: 3
+    },
+    artist: {
+      name: "Artist 3",
+      image: null,
+      artist_followed: []
+    },
+    title: "Album 3",
+    year: 2022,
+    image: null,
+    user: ObjectId("6422aaf78eb5a43d218a26ca")
+  },
+
+  {
+    songs: {
+      title: "Song 5",
+      length: 5.01,
+      number_repr: 5
+    },
+    artist: {
+      name: "Artist 5",
+      image: null,
+      artist_followed: []
+    },
+    title: "Album 5",
+    year: 2024,
+    image: null,
+    user: ObjectId("6422aaf78eb5a43d218a26ca")
+  }
+]);

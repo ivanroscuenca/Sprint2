@@ -1,0 +1,17 @@
+
+db.createCollection( 'glasses', {validator: {$jsonSchema: {bsonType: 'object',title:'glasses',required: [         'brand',          'Glasses_pres_right_eye',          'Glasses_pres_left_eye',          'frame',          'colour_frame',          'glass_colour',          'price',          'supplier'],properties: {brand: {bsonType: 'string'},Glasses_pres_right_eye: {bsonType: 'double'},Glasses_pres_left_eye: {bsonType: 'double'},frame: {bsonType: 'string'},colour_frame: {bsonType: 'string'},glass_colour: {bsonType: 'string'},price: {bsonType: 'double'},supplier: {bsonType: 'object',
+title:'object',required: [         'Supplier_name',          'Address',          'Supplier_tel',          'Supplier_fax',          'NIF'],properties: {Supplier_name: {bsonType: 'string'},Address: {bsonType: 'object',
+title:'object',required: [         'street',          'number',          'floor',          'door',          'city',          'zip',          'country'],properties: {street: {bsonType: 'string'},number: {bsonType: 'double'},floor: {bsonType: 'double'},door: {bsonType: 'double'},city: {bsonType: 'string'},zip: {bsonType: 'string'},country: {bsonType: 'string'}}},Supplier_tel: {bsonType: 'double'},Supplier_fax: {bsonType: 'double'},NIF: {bsonType: 'string'}}}}         }      }});  
+ db.glasses.createIndex(
+{
+  "_id": 1
+})
+
+
+db.createCollection( 'sales', {validator: {$jsonSchema: {bsonType: 'object',title:'sales',required: [         'sale_date',          'price',          'payment',          'employee_name',          'client',          'glass_id'],properties: {sale_date: {bsonType: 'date'},price: {bsonType: 'double'},payment: {bsonType: 'string'},employee_name: {bsonType: 'string'},client: {bsonType: 'object',
+title:'object',required: [         'client_id',          'Clients_name',          'Clients_zip',          'Clients_tel',          'Clients_email',          'Clients_registration',          'Clients_referal'],properties: {client_id: {bsonType: 'double'},Clients_name: {bsonType: 'string'},Clients_zip: {bsonType: 'string'},Clients_tel: {bsonType: 'double'},Clients_email: {bsonType: 'string'},Clients_registration: {bsonType: 'string'},Clients_referal: {bsonType: 'double'}}},glass_id: {bsonType: 'double'}}         }      }});  
+ db.sales.createIndex(
+{
+  "_id": 1
+})
+

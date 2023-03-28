@@ -1,0 +1,301 @@
+
+// Select the database to use.
+use('youtube');
+
+//user1
+db.user.insertOne([ 
+   {        "email": "user1@example.com",        "password": "password1",        "name_user": "User One",        "date_of_birth": ISODate("1990-01-01"),        "gender": "MALE",        "country": "USA",        "zip": 12345,        "own_channel": {            "name": "Channel One",            "description": "My first channel",            "date_creation": ISODate("2022-01-01")        },        "subscription_chanels": [                   ],
+        "playlist": {
+            "name": "My favorite songs",
+            "date": Timestamp(1648354800, 0),
+            "state": "PUBLIC"
+        }
+    },
+]);
+//user2
+use('youtube');
+db.user.insertOne([ 
+
+    {
+        "email": "user2@example.com",
+        "password": "password2",
+        "name_user": "User Two",
+        "date_of_birth": ISODate("1995-05-05"),
+        "gender": "FEMALE",
+        "country": "Canada",
+        "zip": 67890,
+        "own_channel": {
+            "name": "Channel Two",
+            "description": "My second channel",
+            "date_creation": ISODate("2022-02-02")
+        },
+        "subscription_chanels": [
+            ObjectId("6420738bbefa52bf45cf2e04")
+        ],
+        "playlist": {
+            "name": "My workout playlist",
+            "date": Timestamp(1648297200, 0),
+            "state": "PRIVATE"
+        }
+    },
+]);
+// 8 users
+use('youtube');
+db.user.insertMany([ 
+
+    {
+        "email": "user3@example.com",
+        "password": "password3",
+        "name_user": "User 3",
+        "date_of_birth": ISODate("1995-05-05"),
+        "gender": "MALE",
+        "country": "USA",
+        "zip": 61890,
+        "own_channel": {
+            "name": "Channel 3",
+            "description": "My third channel",
+            "date_creation": ISODate("2022-03-28")
+        },
+        "subscription_chanels": [
+            ObjectId("6420738bbefa52bf45cf2e04")
+        ],
+        "playlist": {
+            "name": "My playlist",
+            "date": Timestamp(1648297200, 0),
+            "state": "PRIVATE"
+        }
+    },
+
+    {
+      "email": "user4@example.com",
+        "password": "password4",
+        "name_user": "User 4",
+        "date_of_birth": ISODate("1985-06-06"),
+        "gender": "FEMALE",
+        "country": "MEXICO",
+        "zip": 21890,
+        "own_channel": {
+            "name": "Channel 4",
+            "description": "My favourite channel",
+            "date_creation": ISODate("2022-04-28")
+        },
+        "subscription_chanels": [
+            ObjectId("6420738bbefa52bf45cf2e04")
+        ],
+        "playlist": {
+            "name": "My playlist",
+            "date": Timestamp(1648297200, 0),
+            "state": "PRIVATE"
+        }
+    },
+
+    {
+      "email": "user5@example.com",
+        "password": "password5",
+        "name_user": "User 5",
+        "date_of_birth": ISODate("1983-09-03"),
+        "gender": "FEMALE",
+        "country": "USA",
+        "zip": 71890,
+        "own_channel": {
+            "name": "Channel 5",
+            "description": "My fav channel",
+            "date_creation": ISODate("2022-05-28")
+        },
+        "subscription_chanels": [
+            ObjectId("6420738bbefa52bf45cf2e04")
+        ],
+        "playlist": {
+            "name": "playlist1",
+            "date": Timestamp(1648297200, 0),
+            "state": "PUBLIC"
+        }
+    },
+      {
+      "email": "user6@example.com",
+        "password": "password6",
+        "name_user": "User 6",
+        "date_of_birth": ISODate("1982-09-03"),
+        "gender": "MALE",
+        "country": "USA",
+        "zip": 61890,
+        "own_channel": {
+            "name": "Channel 6",
+            "description": "Best Channel",
+            "date_creation": ISODate("2022-08-18")
+        },
+        "subscription_chanels": [
+            ObjectId("64207423393ae15fc38b4b64")
+        ],
+        "playlist": {
+            "name": "playlist",
+            "date": Timestamp(1648297200, 0),
+            "state": "PUBLIC"
+        }
+    },
+      {
+      "email": "user7@example.com",
+        "password": "password7",
+        "name_user": "User 7",
+        "date_of_birth": ISODate("1978-10-10"),
+        "gender": "MALE",
+        "country": "CANADA",
+        "zip": 71890,
+        "own_channel": {
+            "name": "Channel 7",
+            "description": "mY Channel",
+            "date_creation": ISODate("2022-09-18")
+        },
+        "subscription_chanels": [
+            ObjectId("64207423393ae15fc38b4b64")
+        ],
+        "playlist": {
+            "name": "playlist",
+            "date": Timestamp(1648297200, 0),
+            "state": "PRIVATE"
+        }
+    },
+      {
+      "email": "user8@example.com",
+        "password": "password8",
+        "name_user": "User 8",
+        "date_of_birth": ISODate("1968-10-10"),
+        "gender": "MALE",
+        "country": "MEXICO",
+        "zip": 11890,
+        "own_channel": {
+            "name": "Channel 8",
+            "description": "mY Channel",
+            "date_creation": ISODate("2022-09-18")
+        },
+        "subscription_chanels": [
+            ObjectId("64207423393ae15fc38b4b64")
+        ],
+        "playlist": {
+            "name": "playlist",
+            "date": Timestamp(1648297200, 0),
+            "state": "PUBLIC"
+        }
+    },
+      {
+      "email": "user9@example.com",
+        "password": "password9",
+        "name_user": "User9",
+        "date_of_birth": ISODate("1968-10-10"),
+        "gender": "MALE",
+        "country": "USA",
+        "zip": 15890,
+        "own_channel": {
+            "name": "Channel 9",
+            "description": "favourite Channel",
+            "date_creation": ISODate("2022-10-18")
+        },
+        "subscription_chanels": [
+            ObjectId("64207423393ae15fc38b4b64")
+        ],
+        "playlist": {
+            "name": "playlist",
+            "date": Timestamp(1648297200, 0),
+            "state": "PRIVATE"
+        }
+    },
+         {
+      "email": "user10@example.com",
+        "password": "password10",
+        "name_user": "User10",
+        "date_of_birth": ISODate("1988-10-10"),
+        "gender": "FEMALE",
+        "country": "USA",
+        "zip": 25890,
+        "own_channel": {
+            "name": "Channel 10",
+            "description": "My Channel",
+            "date_creation": ISODate("2022-11-18")
+        },
+        "subscription_chanels": [
+            ObjectId("64207423393ae15fc38b4b64")
+        ],
+        "playlist": {
+            "name": "playlist",
+            "date": Timestamp(1648297200, 0),
+            "state": "PRIVATE"
+        }
+    }
+]);
+
+// insert one in video
+use('youtube');
+db.video.insertOne({
+  title: "First video",
+  description: "This is the first video",
+  size: 10.5,
+  name_file: "first_video.mp4",
+  length: 120.5,
+  num_reproductions: 0,
+  num_likes: 0,
+  num_dislikes: 0,
+  state: "PUBLIC",
+  tags: {
+    name_tag: "music"
+  },
+  publication_date: new Date(),
+  user: ObjectId("6420738bbefa52bf45cf2e04"),
+  likes_users: {},
+  dislike_users: {},
+  comments: {},
+  thumbnail: null
+});
+
+// insert 9 more
+
+use('youtube');
+
+db.video.insertMany([  
+ 
+    
+    {"title": "Video 2",    "description": "first video",    "size": 12.5,    "name_file": "video.mp4",    "length": 120.5,    "thumbnail": null,    "num_reproductions": 200,    "num_likes": 150,    "num_dislikes": 25,    "state": "PUBLIC",    "tags": {"name_tag": "cats"},    "publication_date": ISODate("2023-03-26T00:00:00Z"),    "user": ObjectId("64207423393ae15fc38b4b64"),    
+    "likes_users": [{"user_id": ObjectId("6420738bbefa52bf45cf2e04"), "date": Timestamp(1648262400, 0)}],
+    "dislike_users": [{"user_id": ObjectId("642077ca8d72b92d68f09460"), "date": Timestamp(1648262400, 0)}],
+    "comments": [{"text": "Great!", "date": Timestamp(1648262400, 0), "dislike": false, "like": true, "user_id": ObjectId("61b24efb6687ae1234567891")}]
+  },
+      {"title": "Video 3",    "description": "Cats in the house",    "size": 8.5,    "name_file": "videocats.mp4",    "length": 120.5,    "thumbnail": null,    "num_reproductions": 1000,    "num_likes": 250,    "num_dislikes": 5,    "state": "PUBLIC",    "tags": {"name_tag": "cats"},    "publication_date": ISODate("2022-02-26T00:00:00Z"),    "user": ObjectId("642077ca8d72b92d68f09460"),    
+    "likes_users": [{"user_id": ObjectId("642077ca8d72b92d68f09463"), "date": Timestamp(1648262400, 0)}],
+    "dislike_users": [{"user_id": ObjectId("642077ca8d72b92d68f09464"), "date": Timestamp(1648262400, 0)}],
+    "comments": [{"text": "Ugly!", "date": Timestamp(1648262400, 0), "dislike": false, "like": true, "user_id": ObjectId("61b24efb6687ae1234567891")}]
+  },
+        {"title": "Video 4",    "description": "Video about dogs",    "size": 13.5,    "name_file": "videodogs.mp4",    "length": 80.5,    "thumbnail": null,    "num_reproductions": 900,    "num_likes": 450,    "num_dislikes": 35,    "state": "PUBLIC",    "tags": {"name_tag": "dogs"},    "publication_date": ISODate("2023-01-26T00:00:00Z"),    "user": ObjectId("642077ca8d72b92d68f09461"),    
+        "likes_users": [{"user_id": ObjectId("642077ca8d72b92d68f09462"), "date": Timestamp(1648262400, 0)}],
+    "dislike_users": [{"user_id": ObjectId("642077ca8d72b92d68f09463"), "date": Timestamp(1648262400, 0)}],
+    "comments": [{"text": "Perfect!", "date": Timestamp(1648262400, 0), "dislike": false, "like": true, "user_id": ObjectId("61b24efb6687ae1234567891")}]
+  },
+        {"title": "Video 5",    "description": "Video about animal",    "size": 11.5,    "name_file": "animals.mp4",    "length": 90.5,    "thumbnail": null,    "num_reproductions": 100,    "num_likes": 650,    "num_dislikes": 45,    "state": "PUBLIC",    "tags": {"name_tag": "animals"},    "publication_date": ISODate("2023-02-23T00:00:00Z"),    "user": ObjectId("642077ca8d72b92d68f09462"),    
+        "likes_users": [{"user_id": ObjectId("642077ca8d72b92d68f09463"), "date": Timestamp(1648262400, 0)}],
+    "dislike_users": [{"user_id": ObjectId("642077ca8d72b92d68f09464"), "date": Timestamp(1648262400, 0)}],
+    "comments": [{"text": "Awesome!", "date": Timestamp(1648262400, 0), "dislike": false, "like": true, "user_id": ObjectId("61b24efb6687ae1234567891")}]
+  },
+        {"title": "Video 6",    "description": "This is my video",    "size": 10.5,    "name_file": "video1.mp4",    "length": 120.5,    "thumbnail": null,    "num_reproductions": 200,    "num_likes": 53,    "num_dislikes": 5,    "state": "PUBLIC",    "tags": {"name_tag": "persons"},    "publication_date": ISODate("2023-03-26T00:00:00Z"),    "user": ObjectId("642077ca8d72b92d68f09463"),   
+        "likes_users": [{"user_id": ObjectId("642077ca8d72b92d68f09464"), "date": Timestamp(1648262400, 0)}],
+    "dislike_users": [{"user_id": ObjectId("642077ca8d72b92d68f09465"), "date": Timestamp(1648262400, 0)}],
+    "comments": [{"text": "Hilarious!", "date": Timestamp(1648262400, 0), "dislike": false, "like": true, "user_id": ObjectId("61b24efb6687ae1234567891")}]
+  },
+        {"title": "Video 7",    "description": "My video",    "size": 10.5,    "name_file": "video1.mp4",    "length": 120.5,    "thumbnail": null,    "num_reproductions": 100,    "num_likes": 350,    "num_dislikes": 15,    "state": "PUBLIC",    "tags": {"name_tag": "funny"},    "publication_date": ISODate("2023-04-21T00:00:00Z"),    "user": ObjectId("642077ca8d72b92d68f09464"),   
+         "likes_users": [{"user_id": ObjectId("642077ca8d72b92d68f09465"), "date": Timestamp(1648262400, 0)}],
+    "dislike_users": [{"user_id": ObjectId("642077ca8d72b92d68f09466"), "date": Timestamp(1648262400, 0)}],
+    "comments": [{"text": "Pretty video!", "date": Timestamp(1648262400, 0), "dislike": false, "like": true, "user_id": ObjectId("61b24efb6687ae1234567891")}]
+  },
+        {"title": "Video 8",    "description": "Buildings",    "size": 9.5,    "name_file": "video1.mp4",    "length": 120.5,    "thumbnail": null,    "num_reproductions": 300,    "num_likes": 250,    "num_dislikes": 25,    "state": "PRIVATE",    "tags": {"name_tag": "awesome"},    "publication_date": ISODate("2022-03-26T00:00:00Z"),    "user": ObjectId("642077ca8d72b92d68f09465"),    
+        "likes_users": [{"user_id": ObjectId("642077ca8d72b92d68f09466"), "date": Timestamp(1648262400, 0)}],
+    "dislike_users": [{"user_id": ObjectId("642077ca8d72b92d68f09467"), "date": Timestamp(1648262400, 0)}],
+    "comments": [{"text": "OMG!", "date": Timestamp(1648262400, 0), "dislike": false, "like": true, "user_id": ObjectId("61b24efb6687ae1234567891")}]
+  },      {"title": "Video 1",    "description": "Bridges in London",    "size": 10.5,    "name_file": "video1.mp4",    "length": 120.5,    "thumbnail": null,    "num_reproductions": 250,    "num_likes": 150,    "num_dislikes": 25,    "state": "PUBLIC",    "tags": {"name_tag": "animals"},    "publication_date": ISODate("2023-01-26T00:00:00Z"),    "user": ObjectId("642077ca8d72b92d68f09466"),   
+   "likes_users": [{"user_id": ObjectId("642077ca8d72b92d68f09461"), "date": Timestamp(1648262400, 0)}],
+    "dislike_users": [{"user_id": ObjectId("642077ca8d72b92d68f09462"), "date": Timestamp(1648262400, 0)}],
+    "comments": [{"text": "Great!", "date": Timestamp(1648262400, 0), "dislike": false, "like": true, "user_id": ObjectId("61b24efb6687ae1234567891")}]
+  },
+        {"title": "Video 10",    "description": "Barcelona",    "size": 7.5,    "name_file": "video1.mp4",    "length": 120.5,    "thumbnail": null,    "num_reproductions": 120,    "num_likes": 20,    "num_dislikes": 25,    "state": "PRIVATE",    "tags": {"name_tag": "cats"},    "publication_date": ISODate("2023-01-26T00:00:00Z"),    "user": ObjectId("642077ca8d72b92d68f09467"),   
+         "likes_users": [{"user_id": ObjectId("642077ca8d72b92d68f09462"), "date": Timestamp(1648262400, 0)}],
+    "dislike_users": [{"user_id": ObjectId("642077ca8d72b92d68f09461"), "date": Timestamp(1648262400, 0)}],
+    "comments": [{"text": "Genial!", "date": Timestamp(1648262400, 0), "dislike": false, "like": true, "user_id": ObjectId("61b24efb6687ae1234567891")}]
+  }
+
+]);
